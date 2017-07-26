@@ -25,7 +25,7 @@ So what is this thing? We’re building a streaming CMS that’s well, not reall
 ## Build Schedule
 ### Back end
 - [x] Install Laravel
-- [ ] Minor cleanup, save repo
+- [x] Minor cleanup, save repo
 - [ ] DB Setup
 	- [ ] Migrations:
 		- [ ] Stream

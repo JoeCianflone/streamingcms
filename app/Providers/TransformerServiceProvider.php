@@ -2,12 +2,13 @@
 
 namespace App\Providers;
 
+use App\Transformers\TweetTransformer;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class TransformerServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap the application services.
      *
      * @return void
      */
@@ -17,12 +18,12 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register any application services.
+     * Register the application services.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->bind('App\Repositores\Stream', 'App\Repositores\EloquentStream');
+        $this->app->singleton('TweetTransformer', TweetTransformer::class);
     }
 }
