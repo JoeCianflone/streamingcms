@@ -28,7 +28,7 @@ So what is this thing? We’re building a streaming CMS that’s well, not reall
 - [x] Minor cleanup, save repo
 - [ ] DB Setup
 	- [ ] Migrations:
-		- [ ] Stream
+		- [x] Stream
 		- [ ] Pages
 - [ ] Models/Repositories/Controller
 - [ ] Artisan Commands
