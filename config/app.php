@@ -178,6 +178,7 @@ return [
 
         Thujohn\Twitter\TwitterServiceProvider::class,
         Alaouy\Youtube\YoutubeServiceProvider::class,
+        App\Providers\DropboxServiceProvider::class,
     ],
 
     /*

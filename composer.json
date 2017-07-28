@@ -10,7 +10,11 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "league/commonmark": "^0.15.4",
+        "league/commonmark-extras": "^0.1.2",
+        "mnapoli/front-yaml": "^1.5",
         "ramsey/uuid": "^3.6",
+        "spatie/flysystem-dropbox": "^1.0",
         "thujohn/twitter": "^2.2"
     },
     "require-dev": {
