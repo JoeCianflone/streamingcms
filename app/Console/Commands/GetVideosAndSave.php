@@ -2,25 +2,26 @@
 
 namespace App\Console\Commands;
 
-use Twitter;
+use YouTube;
+use App\Repositories\Stream;
+use App\Transformers\YouTubeTransformer;
 use Illuminate\Console\Command;
-use App\Transformers\TweetTransformer;
 
-class GetTweets extends Command
+class GetVideosAndSave extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'stream:tweets { --count=5 } ';
+    protected $signature = 'stream:videos';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Get X number of tweets for a user';
+    protected $description = 'Get X latest videos from YouTube';
 
     /**
      * Create a new command instance.
@@ -37,15 +38,10 @@ class GetTweets extends Command
      *
      * @return mixed
      */
-    public function handle(TweetTransformer $transformer)
+    public function handle(YouTubeTransformer $transformer, Stream $stream)
     {
-        $tweets = Twitter::getUserTimeline([
-           'count' => $this->option('count'),
-           'format' => 'array',
-           'tweet_mode' => 'extended'
-        ]);
+      $videos = Youtube::listChannelVideos('UCF2kiwbx3jhogRvkTNDkebA', 5);
 
-         dd ($transformer->transform(collect($tweets)));
-
+      $stream->saveNewStreamItems($transformer->transform(collect($videos)));
     }
 }

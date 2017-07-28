@@ -2,4 +2,6 @@
 
 namespace App\Repositories;
 
-interface Stream { }
+interface Stream {
+
+}

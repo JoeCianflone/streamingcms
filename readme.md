@@ -32,8 +32,8 @@ So what is this thing? We’re building a streaming CMS that’s well, not reall
 		- [ ] Pages
 - [ ] Models/Repositories/Controller
 - [ ] Artisan Commands
-	- [ ] read tweets
-	- [ ] read youtube
+   - [x] read tweets
+	- [x] read youtube
 	- [ ] CRUD posts
 	- [ ] CRUD images/assets
 	- [ ] CRUD pages

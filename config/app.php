@@ -177,7 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Thujohn\Twitter\TwitterServiceProvider::class,
-
+        Alaouy\Youtube\YoutubeServiceProvider::class,
     ],
 
     /*
@@ -228,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
+        'YouTube' => Alaouy\Youtube\Facades\Youtube::class,
     ],
 
 ];

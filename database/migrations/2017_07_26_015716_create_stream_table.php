@@ -13,7 +13,7 @@ class CreateStreamTable extends Migration
      */
     public function up()
     {
-        Schema::create('stream', function (Blueprint $table) {
+        Schema::create('streams', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('type')->index();
             $table->string('sub_type')->nullable();

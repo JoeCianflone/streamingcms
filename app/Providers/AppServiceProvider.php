@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Repositores\Stream', 'App\Repositores\EloquentStream');
+        $this->app->bind('App\Repositories\Stream', 'App\Repositories\EloquentStream');
     }
 }
