@@ -1,13 +1,11 @@
 // sass-lint:disable no-color-keywords
 $colors: (
-   black:     #000,
-   white:     #fff,
-   charcoal:  #444,
-);
-
+   white: #fff, charcoal: #444, elephant: #193441, tawny: #D35400, munsell: #F3F3F3);
 /// Pulls the hex code out of the color map
 /// @param  {String} $name
 /// @return {String}
 @function color($name) {
-   @return map-get($colors, $name);
+    @return map-get($colors, $name);
 }
+
+$text-dar
