@@ -1,21 +1,59 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },
-  "devDependencies": {
-    "axios": "^0.16.2",
-    "bootstrap-sass": "^3.3.7",
-    "cross-env": "^5.0.1",
-    "jquery": "^3.1.1",
-    "laravel-mix": "^1.0",
-    "lodash": "^4.17.4",
-    "vue": "^2.1.10"
-  }
+   "name": "StreamingCMS",
+   "version": "0.0.1",
+   "description": "This is a streaming CMS from Twitch",
+   "author": "Joe Cianflone",
+   "email": "nope@nope.com",
+   "license": "MIT",
+   "main": "main.js",
+   "config": {
+      "env": "development",
+      "src": {
+         "path": "resources/assets",
+         "scripts": "js",
+         "images": "images",
+         "styles": "sass",
+         "fonts": "fonts",
+         "entry": "main"
+      },
+      "dist": {
+         "path": "public/assets",
+         "scripts": "js",
+         "images": "images",
+         "styles": "css",
+         "fonts": "fonts",
+         "sprites": "sprites"
+      },
+      "copy": [
+         {
+            "fonts": [
+               "fonts"
+            ]
+         }
+      ]
+   },
+   "browserslist": [
+      "> 2%",
+      "IE 11",
+      "last 2 versions"
+   ],
+   "scripts": {
+      "build": "npm-run-all clean build:*",
+      "build:copy": "copy",
+      "build:images": "images",
+      "build:css": "css",
+      "build:scripts": "scripts",
+      "clean": "clean",
+      "deploy": "npm-run-all clean lint build:*",
+      "lint": "lint",
+      "watch": "npm-run-all clean --parallel watch:*",
+      "watch:copy": "watch-copy",
+      "watch:images": "watch-images",
+      "watch:css": "watch-css",
+      "watch:scripts": "watch-scripts"
+   },
+   "dependencies": {
+      "npm-run-all": "^4.0.2",
+      "bamburgs": "mettleshop/bamburgs"
+   }
 }

@@ -40,11 +40,11 @@ class GetPostsAndSave extends Command
      */
     public function handle(PostsTransformer $transformer, Stream $stream)
     {
-         $allFiles = collect(Storage::disk('dropbox')->files(''));
+         $allFiles = collect(Storage::disk('dropbox')->files(env('DROPBOX_POSTS_FOLDER')));
          $posts = $allFiles->filter(function($value, $key) {
-            return ends_with($value, '.md');
+            return ends_with($value, env('DROPBOX_POSTS_EXTENSION'));
          });
 
-         $stream->saveNewStreamItem($transformer->transform($posts));
+         $stream->saveNewStreamItems($transformer->transform($posts));
     }
 }

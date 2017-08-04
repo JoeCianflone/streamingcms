@@ -48,6 +48,12 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'assets' => [
+           'driver' => 'local',
+           'root' => public_path('assets'),
+           'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -63,6 +69,11 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'dropbox' => [
+            'driver' => 'dropbox',
+            'accessToken' => env('DROPBOX_OAUTH_TOKEN'),
+            'clientIdentifier' => env('DROPBOX_API_SECRET'),
+        ],
     ],
 
 ];

@@ -1,0 +1,22 @@
+@import 'node_modules/include-media/dist/include-media';
+
+$floor: rem(320px);
+
+$breakpoints: (
+   'tiny':     rem(320px),
+   'bitty':    rem(480px),
+   'dinky':    rem(576px),
+   'micro':    rem(640px),
+   'small':    rem(768px),
+   'elfin':    rem(800px),
+   'smallish': rem(900px),
+   'medium':   rem(992px),
+   'ample':    rem(1024px),
+   'biggish':  rem(1160px),
+   'large':    rem(1200px),
+   'swole':    rem(1280px),
+   'embiggen': rem(1366px),
+   'bigly':    rem(1440px),
+   'massive':  rem(1600px),
+   'hulking':  rem(1920px)
+);

@@ -1,0 +1,26 @@
+files:
+   ignore:
+      - 'node_modules/**'
+   options:
+      merge-default-rules: true
+      max-warnings: 50
+rules:
+   no-css-comments: 0
+   pseudo-element: 0
+   single-line-per-selector: 0
+   extends-before-mixins: 2
+   extends-before-declarations: 2
+   placeholder-in-extend: 2
+   mixins-before-declarations: 2
+   no-warn: 2
+   no-debug: 2
+   no-ids: 2
+   no-important: 1
+   hex-notation:
+      - 2
+      - style: lowercase
+   indentation:
+      - 2
+      - size: 3
+   property-sort-order:
+   - 2

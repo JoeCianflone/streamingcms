@@ -29,7 +29,14 @@ class EloquentStream implements Stream {
 
       return $exists->count() >= 1 ? true : false;
    }
-   // public function getFullStream($count = 20) { }
 
-   // public function getFilteredStream($type, $count = 20) { }
+   public function getFullStream($count = 40)
+   {
+      return $this->model->orderBy('item_created_at', 'desc')->paginate($count);
+   }
+
+   public function getFilteredStream($type, $count = 20)
+   {
+      return $this->model->where('type', $type)->orderBy('item_created_at', 'desc')->paginate($count);
+   }
 }

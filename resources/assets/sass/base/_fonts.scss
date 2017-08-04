@@ -1,0 +1,82 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group Fonts
+/// @author Joe Cianflone
+////
+
+$font: (
+   primary-family:           #{'Helvetica Neue', sans-serif},
+   primary-line-height:      1.3,
+   primary-letter-spacing:   tracking(-25),
+   primary-font-weight:      400,
+
+   secondary-family:         #{'Helvetica Neue', sans-serif},
+   secondary-line-height:    1.5,
+   secondary-letter-spacing: tracking(-25),
+   secondary-font-weight:    600,
+);
+
+$font-weights: (
+   thin:         100,
+   extra-light:  200,
+   light:        300,
+   normal:       400,
+   medium:       500,
+   semi-bold:    600,
+   bold:         700,
+   extra-bold:   800,
+   ultra-bold:   900,
+);
+
+
+/// Set all your font props in one go
+/// @param  {String} $type
+/// @param  {Number} $size
+@mixin fontstack($type, $size) {
+   font: {
+      family: font($type, 'family');
+      size: rem($size);
+      weight: font($type, 'font-weight');
+   }
+
+   @if (map-has-key($font, '#{$type}-line-height')) {
+      line-height: font($type, 'line-height');
+   }
+
+   @if (map-has-key($font, '#{$type}-letter-spacing')) {
+      letter-spacing: font($type, 'letter-spacing');
+   }
+}
+
+/// Pulls the font-weight number out of the font-weight map
+/// @param  {String} $size
+/// @return {Number}
+@function weight($size) {
+   @return map-get($font-weights, $size);
+}
+
+/// Gets the stuff you need from the font map
+/// @param  {String} $type - primary, secondary
+/// @param  {String} $key - line-height
+/// @return {String}
+@function font($type, $key) {
+   $item: '#{$type}-#{$key}';
+   @return map-get($font, $item);
+}
+
+/// Calculates the correct unitless line-height based on
+/// the given font-size and line-height in pixels
+/// @param  {String} $font-size
+/// @param  {String} $line-height
+/// @return {Number}
+@function line-height($font-size, $line-height) {
+   @return value($line-height / $font-size);
+}
+
+/// Converts the tracking number from Photoshop into EMs
+/// @param  {Integer} $tracking
+/// @return {Number}
+@function tracking($tracking) {
+   @return ($tracking / 1000) + em;
+}

@@ -1,0 +1,26 @@
+////
+/// BEM helper tools
+/// @name _bem
+/// @group helpers
+/// @author Joe Cianflone
+////
+
+$root: '';
+
+@mixin bem($r: false) {
+  @if ($r) {
+    $root: $r !global;
+  }
+
+  #{$root} {
+    @content;
+  }
+}
+
+@mixin extend ($item) {
+   @extend #{$root}#{$item};
+
+   @include bem() {
+      @content;
+   }
+}
